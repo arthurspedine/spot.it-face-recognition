@@ -17,7 +17,7 @@ os.makedirs(DOWNLOAD_PATH, exist_ok=True)
 def save_files_locally(target: str) -> str:
   client = supabase.create_client(os.getenv('BUCKET_URL'), os.getenv('BUCKET_KEY'))
 
-  response = client.storage.from_('spot.it').download(f'{target}.jpg')
+  response = client.storage.from_(os.getenv('BUCKET_STORAGE')).download(f'{target}.jpg')
   img_path = f'{DOWNLOAD_PATH}/{target}.{IMAGE_FORMATTING}'
 
   with open(img_path, 'wb') as f:
