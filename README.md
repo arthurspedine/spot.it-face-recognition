@@ -1,8 +1,8 @@
 # spot.it Face Recognition
 
-### Request
+## Request
 #### Path ```/validate-encounter```
-#### JSON 
+#### JSON BODY
 ```json
 {
     "user_id": "",
@@ -11,7 +11,7 @@
 }
 ```
 
-### Environment Setup
+## Environment Setup (Supabase)
 #### BUCKET_URL
 #### BUCKET_KEY
 #### BUCKET_STORAGE

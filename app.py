@@ -1,9 +1,5 @@
 from flask import Flask, jsonify, request
 from deepface import DeepFace
-
-import numpy as np
-import matplotlib.pyplot as plt
-from PIL import Image
 import os
 import supabase
 
