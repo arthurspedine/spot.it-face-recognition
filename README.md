@@ -5,9 +5,9 @@
 #### JSON BODY
 ```json
 {
-    "user_id": "",
-    "wally_id": "",
-    "encounter_id": ""
+    "userId": "",
+    "wallyId": "",
+    "encounterId": ""
 }
 ```
 
