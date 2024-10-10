@@ -50,7 +50,11 @@ def main():
     print(e)
     return jsonify({'error': 'Could not find the images'}), 404
 
-  validate_img = validate(user_img, wally_img, encounter_img)
+  try:
+    validate_img = validate(user_img, wally_img, encounter_img)
+  except ValueError as e:
+    print(e)
+    return jsonify({'error': 'No faces found'}), 404
 
   for t in types:
     path = f'{DOWNLOAD_PATH}/{t}.{IMAGE_FORMATTING}'
@@ -62,4 +66,4 @@ def main():
     return jsonify({'error': 'The images do not match'}), 400
 
 if __name__ == '__main__':
-  app.run(debug=False) 
+  app.run(debug=True) 
