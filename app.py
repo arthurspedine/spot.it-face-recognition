@@ -1,9 +1,12 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from deepface import DeepFace
 import os
 import supabase
 
 app = Flask(__name__)
+origins = os.getenv('FRONTEND_URLS', '').split(',')
+CORS(app, resources={r"/*": {"origins": origins}})
 
 DOWNLOAD_PATH = 'download'
 IMAGE_FORMATTING = 'jpg'
